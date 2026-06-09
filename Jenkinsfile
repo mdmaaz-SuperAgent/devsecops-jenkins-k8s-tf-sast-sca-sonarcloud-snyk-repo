@@ -6,7 +6,7 @@ pipeline {
    stages{
     stage('CompileandRunSonarAnalysis') {
             steps {	
-		sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=mdmaaz-superagent -Dsonar.organization=mdmaaz-superagent -Dsonar.host.url=https://snyk.io/ -Dsonar.token=9f1e40a6-e3ed-4355-ab8c-3179e8927fab'
+		sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=mdmaaz-superagent -Dsonar.organization=mdmaaz-superagent -Dsonar.host.url=https://app.snyk.io/org/mdmaaz-superagent -Dsonar.token=9f1e40a6-e3ed-4355-ab8c-3179e8927fab'
 			}
     }
 
