@@ -1,17 +1,16 @@
 pipeline {
-    agent any
-
-    tools {
-        maven 'Maven'
+  agent any
+  tools { 
+        maven 'Maven'  
     }
+   stages{
+    stage('CompileandRunSonarAnalysis') {
+            steps {	
+		sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=secguru123 -Dsonar.organization=secguru123 -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=958058fac36d22a25096e9ae5a285c04298bdcdf'
+			}
+        } 
+  }
 
-    stages {
-
-        stage('Build') {
-            steps {
-                 sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=mdmaaz-superagent -Dsonar.organization=mdmaaz-superagent -Dsonar.host.url=https://app.snyk.io/org/mdmaaz-superagent -Dsonar.token=9f1e40a6-e3ed-4355-ab8c-3179e8927fab'
-            }
-        }
 
         stage('Snyk SCA Scan') {
             steps {
@@ -24,4 +23,4 @@ pipeline {
             }
         }
     }
-}
+
