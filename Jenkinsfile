@@ -14,7 +14,7 @@ pipeline {
                 -Dsonar.projectKey=secguru123 \
                 -Dsonar.organization=secguru123 \
                 -Dsonar.host.url=https://sonarcloud.io \
-                -Dsonar.token=958058fac36d22a25096e9ae5a285c04298bdcdf
+                -Dsonar.token=784a5611f0fc696b3415fd3d335b5be954921726
                 '''
             }
         }
